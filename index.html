@@ -5,26 +5,12 @@
 <body style='margin : 0px; overflow: hidden;'>
   <a-scene embedded arjs>
     <!-- create your content here. just a box for now -->
-    <a-box position='0 2 0' material='opacity: 1;'></a-box>
+    <!-- <a-box position='0 2 0' material='opacity: 1;'></a-box> -->
+    
+    
+    <a-box id="box" position="0 0 0" width="100" height="100" depth="100" color="#000"></a-box>
     <a-plane id="plane" position="0 0 0" width="1000" height="1000" color="#fff"></a-plane>
     <!-- define a camera which will move according to the marker position -->
     <a-marker-camera preset='hiro'></a-marker-camera>
   </a-scene>
 </body>
-
-
-  <script>
-    var box = document.querySelector('#box');
-    var plane = document.querySelector('#plane');
-
-    // Listener for when the plane is detected
-    ar.js.addEventListener('hit', function(hit) {
-      // Get the position of the plane in the world
-      var planePosition = hit.position;
-
-      // Set the position of the box to the position of the plane
-      box.position.x = planePosition.x;
-      box.position.y = planePosition.y;
-      box.position.z = planePosition.z;
-    });
-  </script>
