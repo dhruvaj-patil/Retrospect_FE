@@ -1,16 +1,28 @@
-<!-- include A-Frame obviously -->
-<script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
-<!-- include ar.js for A-Frame -->
-<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-<body style='margin : 0px; overflow: hidden;'>
-  <a-scene embedded arjs>
-    <!-- create your content here. just a box for now -->
-    <a-box position='0 2 0' material='opacity: 1;'></a-box>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <!-- Test to check if same scene can be rendered using aframe -->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+
+  </head>
+  <body>
+    <!-- TODO: Need to build Wrappers for both kinds of development -->
+    <a-scene >
+      <!-- <a-scene embedded arjs> -->
+
+        <!-- AR Specific -->
+      <a-marker preset="hiro">
+
+      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-sphere position="0 1.25 -15" radius="1.25" color="#EF2D5E"></a-sphere>
+      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+      <a-sky color="#ECECEC"></a-sky>
     
-    
-    <!-- <a-box id="box" position="0 0 0" width="100" height="100" depth="100" color="#000"></a-box>
-    <a-plane id="plane" position="0 0 0" width="1000" height="1000" color="#fff"></a-plane> -->
-    <!-- define a camera which will move according to the marker position -->
-    <a-marker-camera preset='hiro'></a-marker-camera>
-  </a-scene>
-</body>
+      <!-- AR Specific -->
+    </a-marker>
+    <a-entity camera></a-entity>
+
+    </a-scene>
+  </body>
+</html>
